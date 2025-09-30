@@ -1,0 +1,55 @@
+﻿@page
+@model Barlangok.Pages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>BarlangokModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Nev)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Nev)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Hossz)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Hossz)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Kiterjedes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Kiterjedes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Melyseg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Melyseg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Magassag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Magassag)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Telepules)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Telepules)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.BarlangokModel.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

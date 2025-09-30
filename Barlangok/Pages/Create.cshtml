@@ -1,0 +1,59 @@
+﻿@page
+@model Barlangok.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BarlangokModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Nev" class="control-label"></label>
+                <input asp-for="BarlangokModel.Nev" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Nev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Hossz" class="control-label"></label>
+                <input asp-for="BarlangokModel.Hossz" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Hossz" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Kiterjedes" class="control-label"></label>
+                <input asp-for="BarlangokModel.Kiterjedes" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Kiterjedes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Melyseg" class="control-label"></label>
+                <input asp-for="BarlangokModel.Melyseg" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Melyseg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Magassag" class="control-label"></label>
+                <input asp-for="BarlangokModel.Magassag" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Magassag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BarlangokModel.Telepules" class="control-label"></label>
+                <input asp-for="BarlangokModel.Telepules" class="form-control" />
+                <span asp-validation-for="BarlangokModel.Telepules" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

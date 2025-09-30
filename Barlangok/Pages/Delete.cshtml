@@ -1,0 +1,58 @@
+﻿@page
+@model Barlangok.Pages.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>BarlangokModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Nev)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Nev)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Hossz)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Hossz)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Kiterjedes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Kiterjedes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Melyseg)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Melyseg)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Magassag)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Magassag)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BarlangokModel.Telepules)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BarlangokModel.Telepules)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="BarlangokModel.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
