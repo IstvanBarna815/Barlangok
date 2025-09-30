@@ -21,7 +21,7 @@ namespace Barlangok.Pages
         }
 
         [BindProperty(SupportsGet = true)]
-        public int KivalasztottTelepules { get; set; }
+        public stringí KivalasztottTelepules { get; set; }
 
         public IList<string> Telepules  { get; set; }
         public IList<BarlangokModel> Barlangok { get; set; } = default!;
@@ -32,7 +32,7 @@ namespace Barlangok.Pages
             if (KivalasztottTelepules == 0)
                 Barlangok = await _context.Barlangok.ToListAsync();
             else
-                Barlangok = _context.Barlangok.Where(x => x.Telepules == KivalasztottTelepules).ToListAsync();
+                Barlangok = _context.Barlangok.Where(x => x.Telepules == KivalasztottTelepules).ToList);
         }
     }
 }
