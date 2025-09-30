@@ -8,52 +8,61 @@
 <h1>TelepulesSzerint</h1>
 
 <h4>BarlangokModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Nev" class="control-label"></label>
-                <input asp-for="BarlangokModel.Nev" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Nev" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Hossz" class="control-label"></label>
-                <input asp-for="BarlangokModel.Hossz" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Hossz" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Kiterjedes" class="control-label"></label>
-                <input asp-for="BarlangokModel.Kiterjedes" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Kiterjedes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Melyseg" class="control-label"></label>
-                <input asp-for="BarlangokModel.Melyseg" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Melyseg" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Magassag" class="control-label"></label>
-                <input asp-for="BarlangokModel.Magassag" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Magassag" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BarlangokModel.Telepules" class="control-label"></label>
-                <input asp-for="BarlangokModel.Telepules" class="form-control" />
-                <span asp-validation-for="BarlangokModel.Telepules" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<p>
+    <form method="get">
+        <select asp-for="@Model.KivalasztottTelepules">
+            <option value="0">--- Válassz egy települést ---</option>
+            @foreach (var k in Model.Telepules)
+            {
+                <option value="@k">@k</option>
+            }
+        </select>
+        <input type="submit" value="Szűrés" />
+    </form>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlangok[0].Telepules)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlangok[0].Nev)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlangok[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Barlangok[0].Hossz)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Barlangok)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Telepules)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nev)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hossz)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

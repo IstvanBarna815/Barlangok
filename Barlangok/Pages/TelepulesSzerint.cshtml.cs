@@ -32,7 +32,7 @@ namespace Barlangok.Pages
             if (KivalasztottTelepules == 0)
                 Barlangok = await _context.Barlangok.ToListAsync();
             else
-                Barlangok = _context.Barlangok.Where(x => x.Telepules == KivalasztottTelepules).ToList();
+                Barlangok = _context.Barlangok.Where(x => x.Telepules == KivalasztottTelepules).ToListAsync();
         }
     }
 }
